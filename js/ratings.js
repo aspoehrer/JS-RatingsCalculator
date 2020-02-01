@@ -4,11 +4,12 @@ function collect_ratings() {
 
   let rating = 0;
   let ratings = { count: 0, sum: 0, average: 0 };
-  const elements = document.querySelectorAll('rating');
+  const elements = document.querySelectorAll('.rating');
 
   elements.forEach(element => {
-    ratings.count += partInt(element.value);
-    ratings.sum += partInt(element.value) * rating;
+    rating = parseInt(element.id.replace('star', ''));
+    ratings.count += parseInt(element.value);
+    ratings.sum += parseInt(element.value) * rating;
   });
 
   if(ratings.count!=0){
