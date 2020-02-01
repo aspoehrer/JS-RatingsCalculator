@@ -6,10 +6,10 @@ function collect_ratings() {
   let ratings = { count: 0, sum: 0, average: 0 };
   const elements = document.querySelectorAll('rating');
 
-  elements.forEach(element) => {
+  elements.forEach(element => {
     ratings.count += partInt(element.value);
     ratings.sum += partInt(element.value) * rating;
-  }
+  });
 
   if(ratings.count!=0){
     ratings.average = ratings.sum / ratings.count;
